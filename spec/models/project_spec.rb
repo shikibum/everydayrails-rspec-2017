@@ -21,7 +21,6 @@ RSpec.describe Project, type: :model do
     expect(new_project.errors[:name]).to include('has already been taken')
   end
 
-
   # 二人のユーザーが同じ名前を使うことは許可する
   it 'allows two users to share a project name' do
     user = User.create(
