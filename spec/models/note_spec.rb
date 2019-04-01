@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Note, type: :model do
-# ファクトリで関連するデータを生成する
+  # ファクトリで関連するデータを生成する
   it 'generates associated data from a factory' do
     note = FactoryBot.create(:note)
     puts "This note's project is #{note.project.inspect}"
@@ -63,12 +63,11 @@ RSpec.describe Note, type: :model do
       end
     end
 
-      # 一致するデータが見つからないとき
-      context 'when no match is found' do
-        it 'return an empty collection' do
-          expect(Note.search('message')).to be_empty
-        end
+    # 一致するデータが見つからないとき
+    context 'when no match is found' do
+      it 'return an empty collection' do
+        expect(Note.search('message')).to be_empty
       end
     end
+  end
 end
-
