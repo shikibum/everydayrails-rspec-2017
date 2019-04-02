@@ -15,7 +15,7 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
-  gem 'capybara', '~> 2.13.0'
+  gem 'capybara', '~> 2.15.2'
   gem 'factory_bot_rails', '~> 4.10.0'
   gem 'pry-byebug'
   gem 'rspec-rails', '~> 3.6.0'
