@@ -20,6 +20,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'rspec-rails', '~> 3.6.0'
   gem 'selenium-webdriver'
+  gem 'launchy', '~> 2.4.3'
 end
 
 group :development do
