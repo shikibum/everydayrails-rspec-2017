@@ -4,7 +4,6 @@ RSpec.feature "Projects", type: :feature do
   scenario 'user cretes a new project' do
     user = FactoryBot.create(:user)
     sign_in user
-
     visit root_path
 
     expect {
@@ -12,10 +11,12 @@ RSpec.feature "Projects", type: :feature do
       fill_in 'Name', with: 'Test Project'
       fill_in 'Description', with: 'Trying out Capybara'
       click_button 'Create Project'
+    }.to change(user.projects, :count).by(1)
 
+    aggregate_failures do
       expect(page).to have_content 'Project was successfully created'
       expect(page).to have_content 'Test Project'
       expect(page).to have_content "Owner: #{user.name}"
-    }.to change(user.projects, :count).by(1)
+    end
   end
 end
