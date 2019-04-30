@@ -23,6 +23,8 @@ group :development, :test do
   gem 'chromedriver-helper'
   gem 'launchy', '~> 2.4.3'
   gem 'shoulda-matchers'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do
