@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: %i[show edit update destroy]
+  before_action :set_project, only: %i[show edit update destroy complete]
   before_action :project_owner?, except: %i[index new create]
 
   # GET /projects
@@ -58,6 +58,12 @@ class ProjectsController < ApplicationController
       format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def complete
+    @project.update_attributes!(completed: true)
+    redirect_to @project,
+      notice: 'Congratulations, this project is complete!'
   end
 
   private
